@@ -30,8 +30,8 @@ export interface CardList {
     card_id: number;
     base_card_id: number;
     card_type: string;
-    mini_image: MiniImage;
-    ingame_image: IngameImage;
+    mini_image: any;
+    ingame_image: any;
     illustrator: string;
     rarity: string;
     is_blue: boolean;

@@ -2,10 +2,11 @@
      fxLayout="column"
      fxLayoutGap="10px">
 
-  <mat-list fxFlex *ngIf="cardList">
-    <mat-list-item>
-      <img matListAvatar src={{cardList.mini_image.default}} >
-      <h1 matLine>{{getText(cardList.english)}}</h1>
+  <mat-list fxFlex *ngIf="cards">
+    <mat-list-item *ngFor="let cardList of cards.card_set.card_list">
+      <img matListAvatar alt="No Image" src={{cardList.mini_image.default}} >
+      <!--<h1 matLine>{{getText(cardList.english)}}</h1>-->
+      <h1 matLine [innerHTML]="cardList.english"></h1>
       <p matLine>
         <span>Card Id: {{cardList.card_id}}</span>
       </p>
