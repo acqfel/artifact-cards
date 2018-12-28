@@ -76,5 +76,13 @@ export class MenuComponent implements OnInit {
     console.log(this.cards);
   }
   
-  
+  getText(text: string) : string {
+    let div = document.createElement('div');
+    div.innerHTML = text;
+    
+    let arrText = [];
+    div.childNodes.forEach(e => arrText.push(e.textContent));
+    
+    return arrText[0];
+  }
 }
