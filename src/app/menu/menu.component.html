@@ -1,3 +1,18 @@
 <p>
   menu works!
 </p>
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <mat-list fxFlex *ngIf="cardList">
+    <mat-list-item>
+      <img matListAvatar src={{cardList.mini_image.default}} >
+      <h1 matLine>Card Id: {{cardList.card_id}} </h1>
+      <p matLine>
+        <span> {{cardList.english}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+
+</div>

@@ -1,7 +1,15 @@
+export interface Name {
+    english: string;
+    spanish: string;
+    portuguese: string;
+    brazilian: string;
+    latam: string;
+}
+
 export interface SetInfo {
     set_id: number;
     pack_item_def: number;
-    name: string[];
+    name: Name;
 }
 
 export interface MiniImage {
@@ -15,7 +23,7 @@ export interface IngameImage {
 export interface Reference {
     card_id: number;
     ref_type: string;
-    count: number;
+    count?: number;
 }
 
 export interface CardList {
@@ -54,6 +62,4 @@ export interface CardSet {
 export interface Card {
     card_set: CardSet;
 }
-
-
 
