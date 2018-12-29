@@ -1,7 +1,46 @@
 <div class="container"
      fxLayout="column"
      fxLayoutGap="10px">
+  
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+    </div>
+  </div>
+  
+  <!--Menu Card-->
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let cardList of cards.card_set.card_list">
+        <img height="200px" src={{cardList.default}} alt="No Image">
+        <mat-grid-tile-footer>
+          <h1 matLine>{{getText(cardList.english)}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  
+  <!--Selected Card-->
+  <div fxLayout="row" fxLayoutAlign="center center" *ngIf="selectedCard">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{ getText(selectedCard.english) | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image width="250px" src={{selectedCard.default}} alt="No Image">
+      <mat-card-content>
+        <p [innerHTML]="selectedCard.english"></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 
+  <!--List Card-->
   <mat-list fxFlex *ngIf="cards">
     <mat-list-item *ngFor="let cardList of cards.card_set.card_list">
       <img matListAvatar alt="No Image" src={{cardList.mini_image.default}} >

@@ -206,6 +206,8 @@ export class MenuComponent implements OnInit {
   
   //cardList: CardList = this.cards.card_set.card_list[0];
   
+  selectedCard = this.cards.card_set.card_list[0];
+  
   constructor() { }
 
   ngOnInit() {
