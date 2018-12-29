@@ -13,11 +13,13 @@ import { MatButtonModule } from '@angular/material/button';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,

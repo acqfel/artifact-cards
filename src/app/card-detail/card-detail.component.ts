@@ -4,23 +4,18 @@ import { Card, CardList } from '../shared/card';
 import { CARDS } from '../shared/cards';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-card-detail',
+  templateUrl: './card-detail.component.html',
+  styleUrls: ['./card-detail.component.scss']
 })
-export class MenuComponent implements OnInit {
-  
+export class CardDetailComponent implements OnInit {
+
   cards: Card = CARDS;
-  
-  //cardList: CardList = this.cards.card_set.card_list[0];
-  
-  //selectedCard: CardList = this.cards.card_set.card_list[0];
-  selectedCard: CardList;
+  selectedCard: CardList = this.cards.card_set.card_list[0];
   
   constructor() { }
 
   ngOnInit() {
-    console.log(this.cards);
   }
   
   getText(text: string) : string {
@@ -32,9 +27,5 @@ export class MenuComponent implements OnInit {
     
     return arrText[0];
   }
-  
-  onSelect(card: CardList) {
-    this.selectedCard = card;
-  }
-  
+
 }

@@ -1,3 +1,5 @@
+import { Comment } from './comment';
+
 export interface Name {
     english: string;
     spanish: string;
@@ -51,6 +53,7 @@ export interface CardList {
     is_red?: any;
     mana_cost?: any;
     sub_type?: any;
+    comments?: Comment[];
 }
 
 export interface CardSet {
