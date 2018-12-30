@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Card, CardList } from '../shared/card';
 import { CARDS } from '../shared/cards';
@@ -10,12 +10,15 @@ import { CARDS } from '../shared/cards';
 })
 export class CardDetailComponent implements OnInit {
 
-  cards: Card = CARDS;
-  selectedCard: CardList = this.cards.card_set.card_list[0];
+  //cards: Card = CARDS;
+  //selectedCard: CardList = this.cards.card_set.card_list[0];
+  @Input()
+  selectedCard: CardList;
   
   constructor() { }
 
   ngOnInit() {
+     console.log(this.selectedCard);
   }
   
   getText(text: string) : string {

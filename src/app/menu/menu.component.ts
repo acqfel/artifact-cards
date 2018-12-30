@@ -13,9 +13,7 @@ export class MenuComponent implements OnInit {
   cards: Card = CARDS;
   
   //cardList: CardList = this.cards.card_set.card_list[0];
-  
-  //selectedCard: CardList = this.cards.card_set.card_list[0];
-  selectedCard: CardList;
+  selectedCard: CardList = this.cards.card_set.card_list[0];
   
   constructor() { }
 
