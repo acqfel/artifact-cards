@@ -10,18 +10,23 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 
 import { CardService } from './services/card.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,7 @@ import { CardService } from './services/card.service';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
     FlexLayoutModule
   ],
   providers: [CardService],
