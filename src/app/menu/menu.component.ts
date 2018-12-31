@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Card, CardList } from '../shared/card';
 import { CARDS } from '../shared/cards';
 
+import { CardService } from '../services/card.service';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,15 +12,21 @@ import { CARDS } from '../shared/cards';
 })
 export class MenuComponent implements OnInit {
   
-  cards: Card = CARDS;
+  // without service
+  //cards: Card = CARDS;
+  
+  // with service
+  cards: Card;
   
   //cardList: CardList = this.cards.card_set.card_list[0];
-  selectedCard: CardList = this.cards.card_set.card_list[0];
+  selectedCard: CardList;
   
-  constructor() { }
+  constructor(private cardService: CardService) { }
 
   ngOnInit() {
     console.log(this.cards);
+    this.cards = this.cardService.getCards();
+    this.selectedCard = this.cards.card_set.card_list[0];
   }
   
   getText(text: string) : string {
